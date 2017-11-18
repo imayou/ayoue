@@ -2,13 +2,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ayoue</groupId>
-		<artifactId>ayoue</artifactId>
+		<artifactId>ayoue-admin</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>ayoue-admin</artifactId>
+	<artifactId>ayoue-admin-static</artifactId>
 	<packaging>pom</packaging>
-	<modules>
-		<module>ayoue-admin-site</module>
-		<module>ayoue-admin-static</module>
-	</modules>
 </project>

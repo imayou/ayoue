@@ -21,6 +21,7 @@
 		<module>ayoue-admin</module>
 		<module>ayoue-sso</module>
 		<module>ayoue-common</module>
+		<module>ayoue-web-base</module>
 	</modules>
 
 	<dependencyManagement>
