@@ -1,0 +1,6 @@
+io\ayoue\admin\site\AppConfig.class
+io\ayoue\admin\site\repository\UserRepository.class
+io\ayoue\admin\site\repository\GroupRepository.class
+io\ayoue\admin\site\repository\RoleRepository.class
+io\ayoue\admin\site\DemoApplication.class
+io\ayoue\admin\site\config\JpaConfiguration.class

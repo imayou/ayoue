@@ -1,0 +1,12 @@
+io\ayoue\common\model\Group.class
+io\ayoue\common\model\base\entity\BaseEntity.class
+io\ayoue\common\model\base\DateAware.class
+io\ayoue\common\model\base\DataObject.class
+io\ayoue\common\model\base\LoginUser.class
+io\ayoue\common\model\Role.class
+io\ayoue\common\model\base\entity\CompositePkEntity.class
+io\ayoue\common\model\base\BaseData.class
+io\ayoue\common\model\User.class
+io\ayoue\common\model\base\DescribedData.class
+io\ayoue\common\model\base\BaseConstants.class
+io\ayoue\common\model\base\entity\DescribedEntity.class
