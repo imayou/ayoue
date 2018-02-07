@@ -2,6 +2,8 @@ package io.ayoue.common.model.base.entity;
 
 import java.util.Date;
 
+import javax.persistence.MappedSuperclass;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,41 +14,42 @@ import io.ayoue.common.tools.PinyinUtil;
  * 有一定描述信息（如：name，description）的持久化实体类的基类
  */
 @SuppressWarnings("serial")
+@MappedSuperclass
 public abstract class DescribedEntity extends BaseEntity implements DescribedData<DescribedEntity> {
 	/**
 	 * 名称(标题)
 	 */
-	private String name;
+	protected String name;
 
 	/**
 	 * 编号
 	 */
-	private String no;
+	protected String no;
 
 	/**
 	 * 显示名称
 	 */
-	private String description;
+	protected String description;
 
-	private String pinyin;
+	protected String pinyin;
 
-	private String fullPinyin;
+	protected String fullPinyin;
 
 	/**
 	 * 创建时间
 	 */
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private Date createDate;
+	protected Date createDate;
 
 	/**
 	 * 最后修改时间
 	 */
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private Date modifyDate;
+	protected Date modifyDate;
 
-	private Integer sortIdx;
+	protected Integer sortIdx;
 
-	private Integer version;
+	protected Integer version;
 
 	@Override
 	public String getName() {

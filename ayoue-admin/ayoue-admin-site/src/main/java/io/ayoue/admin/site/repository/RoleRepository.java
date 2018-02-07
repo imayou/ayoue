@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import io.ayoue.common.model.Role;
 
+
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
 

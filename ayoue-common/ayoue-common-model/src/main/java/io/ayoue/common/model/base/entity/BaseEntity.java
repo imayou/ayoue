@@ -8,18 +8,20 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 import io.ayoue.common.model.base.DataObject;
 
 @SuppressWarnings("serial")
+@MappedSuperclass
 public abstract class BaseEntity extends DataObject {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	protected Long id;
 
 	@Column(name = "uuid", length = 48, unique = true)
-	private String uuid;
+	protected String uuid;
 
 	public Long getId() {
 		return id;

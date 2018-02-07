@@ -6,6 +6,9 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -16,5 +19,17 @@ public class JpaConfiguration {
 	@Bean
 	PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor() {
 		return new PersistenceExceptionTranslationPostProcessor();
+	}
+
+	@Bean
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+		LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+		entityManagerFactoryBean.setPackagesToScan("io.ayoue");
+		entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter() {
+			{
+				setDatabase(Database.MYSQL);
+			}
+		});
+		return entityManagerFactoryBean;
 	}
 }
