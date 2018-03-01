@@ -27,7 +27,7 @@ public class User extends DescribedEntity {
 	@ManyToMany(cascade = {}, fetch = FetchType.EAGER)
 	@JoinTable(name = "user_role", 
 			joinColumns = { @JoinColumn(name = "user_uuid", referencedColumnName = "uuid") }, 
-			inverseJoinColumns = { @JoinColumn(name = "roles_uuid", referencedColumnName = "uuid") })
+			inverseJoinColumns = { @JoinColumn(name = "role_uuid", referencedColumnName = "uuid") })
 	private List<Role> roles;
 
 	public Group getGroup() {
