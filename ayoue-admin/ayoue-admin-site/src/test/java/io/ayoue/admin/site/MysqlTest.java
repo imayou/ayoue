@@ -74,7 +74,7 @@ public class MysqlTest {
 	}
 
 	@Test
-	public void findPage() {
+	public void findPage() { 
 		Pageable pageable = new PageRequest(0, 10, new Sort(Sort.Direction.ASC, "id"));
 		Page<User> page = userRepository.findAll(pageable);
 		Assert.assertNotNull(page);
