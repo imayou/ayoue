@@ -14,13 +14,8 @@ package io.ayoue.common.tools;
  */
 public class ID {
 	// ==============================Fields===========================================
-<<<<<<< HEAD
     /** 开始时间截 (2018-03-01) */
     private final long twepoch = 1519893590000L;
-=======
-    /** 开始时间截 (2015-01-01) */
-    private final long twepoch = 1420041600000L;
->>>>>>> 0ba365db48bf883d61cc073a07f8617bdfc97106
 
     /** 机器id所占的位数 */
     private final long workerIdBits = 5L;
