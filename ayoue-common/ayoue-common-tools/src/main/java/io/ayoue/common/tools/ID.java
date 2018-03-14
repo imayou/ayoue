@@ -14,8 +14,13 @@ package io.ayoue.common.tools;
  */
 public class ID {
 	// ==============================Fields===========================================
+<<<<<<< HEAD
     /** 开始时间截 (2018-03-01) */
     private final long twepoch = 1519893590000L;
+=======
+    /** 开始时间截 (2015-01-01) */
+    private final long twepoch = 1420041600000L;
+>>>>>>> 0ba365db48bf883d61cc073a07f8617bdfc97106
 
     /** 机器id所占的位数 */
     private final long workerIdBits = 5L;
@@ -83,7 +88,12 @@ public class ID {
 
         //如果当前时间小于上一次ID生成的时间戳，说明系统时钟回退过这个时候应当抛出异常
         if (timestamp < lastTimestamp) {
+<<<<<<< HEAD
             throw new RuntimeException(String.format("Clock moved backwards.  Refusing to generate id for %d milliseconds", lastTimestamp - timestamp));
+=======
+            throw new RuntimeException(
+                    String.format("Clock moved backwards.  Refusing to generate id for %d milliseconds", lastTimestamp - timestamp));
+>>>>>>> 0ba365db48bf883d61cc073a07f8617bdfc97106
         }
 
         //如果是同一时间生成的，则进行毫秒内序列
@@ -135,7 +145,11 @@ public class ID {
     /** 测试 */
     public static void main(String[] args) {
         ID idWorker = new ID(0, 0);
+<<<<<<< HEAD
         for (int i = 0; i < 10; i++) {
+=======
+        for (int i = 0; i < 1000; i++) {
+>>>>>>> 0ba365db48bf883d61cc073a07f8617bdfc97106
             long id = idWorker.nextId();
             System.out.println(Long.toBinaryString(id));
             System.out.println(id);
