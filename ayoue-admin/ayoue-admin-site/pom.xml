@@ -51,10 +51,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!-- https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter -->
 		<dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.1.7</version>
-        </dependency>
+		   <groupId>com.alibaba</groupId>
+		   <artifactId>druid-spring-boot-starter</artifactId>
+		   <version>1.1.9</version>
+		</dependency>
 	</dependencies>
 </project>
