@@ -1,4 +1,4 @@
-package io.ayoue.admin.site.config;
+/*package io.ayoue.admin.site.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,3 +33,4 @@ public class JpaConfiguration {
 		return entityManagerFactoryBean;
 	}
 }
+*/

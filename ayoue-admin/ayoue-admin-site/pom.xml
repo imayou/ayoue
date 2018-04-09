@@ -7,6 +7,12 @@
 		<relativePath>../</relativePath>
 	</parent>
 	<artifactId>ayoue-admin-site</artifactId>
+	
+	<properties>
+		<sharding-jdbc.version>2.0.3</sharding-jdbc.version>
+		<postgresql.version>9.1-901-1.jdbc4</postgresql.version>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>io.ayoue</groupId>
@@ -30,13 +36,26 @@
 			<artifactId>spring-data-neo4j</artifactId>
 		</dependency>
 		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+		<dependency>
+            <groupId>io.shardingjdbc</groupId>
+            <artifactId>sharding-jdbc-core-spring-boot-starter</artifactId>
+            <version>${sharding-jdbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP-java7</artifactId>
+        </dependency>
+		<dependency>
 		    <groupId>com.voodoodyne.jackson.jsog</groupId>
 		    <artifactId>jackson-jsog</artifactId>
 		    <version>1.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 		<dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,6 +69,23 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+        </dependency>
+         <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
         <!-- https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter -->
 		<dependency>

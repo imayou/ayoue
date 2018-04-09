@@ -14,9 +14,9 @@ public class DruidConfiguration {
 	public ServletRegistrationBean statViewServlet() {
 		ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/**");
 		servletRegistrationBean.addInitParameter("allow", "127.0.0.1");
-		// servletRegistrationBean.addInitParameter("deny", "");
+		servletRegistrationBean.addInitParameter("deny", "");
 		servletRegistrationBean.addInitParameter("loginUsername", "druid");
-		servletRegistrationBean.addInitParameter("loginPassword", "12465798");
+		servletRegistrationBean.addInitParameter("loginPassword", "123456");
 		servletRegistrationBean.addInitParameter("resetEnable", "false");
 		return servletRegistrationBean;
 	}

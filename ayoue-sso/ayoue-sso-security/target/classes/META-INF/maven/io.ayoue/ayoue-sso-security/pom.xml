@@ -2,14 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.ayoue</groupId>
-    <artifactId>ayoue</artifactId>
+    <artifactId>ayoue-sso</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>ayoue-sso</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>ayoue-sso-resources</module>
-  	<module>ayoue-sso-passport</module>
-  	<module>ayoue-sso-security</module>
-  </modules>
+  <artifactId>ayoue-sso-security</artifactId>
 </project>
