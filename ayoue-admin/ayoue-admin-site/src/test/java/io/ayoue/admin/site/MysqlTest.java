@@ -1,6 +1,6 @@
 package io.ayoue.admin.site;
 
-import java.util.Date;
+import java.time.Instant;
 import java.util.List;
 
 import org.junit.Assert;
@@ -63,7 +63,7 @@ public class MysqlTest {
 		User user = new User();
 		user.setName("ayoue");
 		user.setUuid(UUIDUtil.generate());
-		user.setCreateDate(new Date());
+		user.setCreateDate(Instant.now());
 		user.setGroup(group);
 		List<Role> roles = roleRepository.findAll();
 		Assert.assertNotNull(roles);

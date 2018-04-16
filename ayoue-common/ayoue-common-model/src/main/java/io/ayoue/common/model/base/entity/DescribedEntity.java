@@ -1,6 +1,6 @@
 package io.ayoue.common.model.base.entity;
 
-import java.util.Date;
+import java.time.Instant;
 
 import javax.persistence.MappedSuperclass;
 
@@ -39,13 +39,13 @@ public abstract class DescribedEntity extends BaseEntity implements DescribedDat
 	 * 创建时间
 	 */
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	protected Date createDate;
+	protected Instant createDate;
 
 	/**
 	 * 最后修改时间
 	 */
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	protected Date modifyDate;
+	protected Instant modifyDate;
 
 	protected Integer sortIdx;
 
@@ -100,26 +100,6 @@ public abstract class DescribedEntity extends BaseEntity implements DescribedDat
 	@Override
 	public void setFullPinyin(String fullPinyin) {
 		this.fullPinyin = fullPinyin;
-	}
-
-	@Override
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	@Override
-	public void setCreateDate(Date date) {
-		this.createDate = date;
-	}
-
-	@Override
-	public Date getModifyDate() {
-		return modifyDate;
-	}
-
-	@Override
-	public void setModifyDate(Date modifyDate) {
-		this.modifyDate = modifyDate;
 	}
 
 	public Integer getSortIdx() {
@@ -179,10 +159,24 @@ public abstract class DescribedEntity extends BaseEntity implements DescribedDat
 		this.setPinyin(PinyinUtil.getFirstLetterPinyin(this.name));
 		if (StringUtils.isBlank(this.getUuid())) {// 新对象
 			this.setUuid(generateUuid());
-			this.setCreateDate(new Date());
+			this.setCreateDate(Instant.now());
 			this.setModifyDate(this.getCreateDate());
 		} else {
-			this.setModifyDate(new Date());
+			this.setModifyDate(Instant.now());
 		}
+	}
+
+	public Instant getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Instant createDate) {
+		this.createDate = createDate;
+	}
+
+	public Instant getModifyDate() {
+		return modifyDate;
+	}
+	public void setModifyDate(Instant modifyDate) {
+		this.modifyDate = modifyDate;
 	}
 }

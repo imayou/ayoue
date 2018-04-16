@@ -1,17 +1,17 @@
 package io.ayoue.common.model.base;
 
-import java.util.Date;
+import java.time.Instant;
 
 /**
  * 日期敏感接口
  * 这里返回值和参数都是string 转换用java8里面的新API
  */
 public interface DateAware {
-	public Date getCreateDate();
+	public Instant getCreateDate();
 
-	public void setCreateDate(Date createDate);
+	public void setCreateDate(Instant createDate);
 
-	public Date getModifyDate();
+	public Instant getModifyDate();
 
-	public void setModifyDate(Date modifyDate);
+	public void setModifyDate(Instant modifyDate);
 }
