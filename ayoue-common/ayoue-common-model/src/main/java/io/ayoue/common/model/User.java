@@ -18,6 +18,9 @@ import io.ayoue.common.model.base.entity.DescribedEntity;
 @Table(name = "[user]")
 public class User extends DescribedEntity {
 	private static final long serialVersionUID = -4196311899336797033L;
+	private String email;
+	private String password;
+	private String sex;
 
 	@ManyToOne()
 	@JoinColumn(name = "group_uuid", referencedColumnName = "uuid")
@@ -33,16 +36,31 @@ public class User extends DescribedEntity {
 	public Group getGroup() {
 		return group;
 	}
-
 	public void setGroup(Group group) {
 		this.group = group;
 	}
-
 	public List<Role> getRoles() {
 		return roles;
 	}
-
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 }
