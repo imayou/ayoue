@@ -2,6 +2,7 @@ package io.ayoue.common.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -18,8 +19,11 @@ import io.ayoue.common.model.base.entity.DescribedEntity;
 @Table(name = "[user]")
 public class User extends DescribedEntity {
 	private static final long serialVersionUID = -4196311899336797033L;
+	@Column(name = "email", nullable = false)
 	private String email;
+	@Column(name = "password", nullable = false)
 	private String password;
+	@Column(name = "sex", nullable = false)
 	private String sex;
 
 	@ManyToOne()

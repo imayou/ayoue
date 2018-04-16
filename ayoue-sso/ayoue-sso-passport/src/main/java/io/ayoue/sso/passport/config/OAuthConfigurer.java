@@ -20,7 +20,7 @@ public class OAuthConfigurer extends AuthorizationServerConfigurerAdapter {
 	@Bean
 	public JwtAccessTokenConverter jwtAccessTokenConverter() {
 		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-		KeyPair keyPair = new KeyStoreKeyFactory(new ClassPathResource("keystore.jks"), "tc123456".toCharArray())
+		KeyPair keyPair = new KeyStoreKeyFactory(new ClassPathResource("keystore.jks"), "ayoue.com".toCharArray())
 				.getKeyPair("tycoonclient");
 		converter.setKeyPair(keyPair);
 		return converter;
