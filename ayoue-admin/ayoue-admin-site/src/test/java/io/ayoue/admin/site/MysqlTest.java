@@ -15,15 +15,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import io.ayoue.admin.site.repository.GroupRepository;
-import io.ayoue.admin.site.repository.RoleRepository;
-import io.ayoue.admin.site.repository.UserRepository;
 import io.ayoue.common.model.Group;
 import io.ayoue.common.model.Role;
 import io.ayoue.common.model.User;
+import io.ayoue.common.model.repository.GroupRepository;
+import io.ayoue.common.model.repository.RoleRepository;
+import io.ayoue.common.model.repository.UserRepository;
 import io.ayoue.common.tools.UUIDUtil;
 
 
@@ -44,9 +45,9 @@ public class MysqlTest {
 
 	@Before
 	public void initDate() {
-		userRepository.deleteAll();
-		roleRepository.deleteAll();
-		groupRepository.deleteAll();
+		//userRepository.deleteAll();
+		//roleRepository.deleteAll();
+		//groupRepository.deleteAll();
 
 		Group group = new Group();
 		group.setName("开发部");
@@ -62,6 +63,7 @@ public class MysqlTest {
 
 		User user = new User();
 		user.setName("ayoue");
+		user.setPassword(new BCryptPasswordEncoder().encode("123456"));;
 		user.setUuid(UUIDUtil.generate());
 		user.setCreateDate(Instant.now());
 		user.setGroup(group);
@@ -83,5 +85,4 @@ public class MysqlTest {
 			logger.error("user name:{}, group name:{}, role name:{}", user.getName(), user.getGroup(), user.getRoles());
 		});
 	}
-
 }
