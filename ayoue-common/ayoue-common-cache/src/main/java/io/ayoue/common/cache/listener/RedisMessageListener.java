@@ -68,8 +68,6 @@ public class RedisMessageListener extends MessageListenerAdapter {
                     logger.info("接收到没有定义的订阅消息频道数据");
                     break;
             }
-
-        }
-    }
-
+		}
+	}
 }
